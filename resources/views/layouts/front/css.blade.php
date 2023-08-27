@@ -28,7 +28,10 @@
 <link href="{{asset('app-front/css/sections/contact.css')}}" rel="stylesheet">
 <link href="{{asset('app-front/css/sections/blog.css')}}" rel="stylesheet">
 <link href="{{asset('app-front/css/responsive.css')}}" rel="stylesheet">
+<link href="{{ asset('app-front/css/checkout.css') }}" rel="stylesheet">
 
-{{-- <link href="{{ asset('plugins/vendors/toast-master/css/jquery.toast.css') }}" rel="stylesheet">  --}}
+  <!-- Compulsory CSS -->
+  <link href="{{ asset('plugins/vendors/toast-master/css/jquery.toast.css') }}" rel="stylesheet"> 
+
 
 

@@ -1,10 +1,1 @@
-{
-   "menus":[
-      {
-         "section":"Modules",
-         "items":[
-            
-         ]
-      }
-   ]
-}
+{"menus":[{"section":"Modules","items":[{"title":"vendorproduct","icon":"fas fa-align-center","url":"\/admin\/vendorproduct"}]}]}

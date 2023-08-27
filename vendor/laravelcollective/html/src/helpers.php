@@ -31,7 +31,6 @@ if (! function_exists('link_to_asset')) {
      */
     function link_to_asset($url, $title = null, $attributes = [], $secure = null)
     {
-
         return app('html')->linkAsset($url, $title, $attributes, $secure);
     }
 }

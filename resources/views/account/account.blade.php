@@ -9,12 +9,14 @@
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="inner_text wow fadeInUp" data-wow-duration="2s">
-          <h1>Account</h1>
+            <br>
+          <h1>Update Profile</h1>
         </div>  
       </div>
     </div>
   </div>
 </section>
+<!-- banner_sec -->
 <!-- banner_sec -->
 
 <main class="my-cart">
@@ -32,18 +34,7 @@
                     <div class="myaccount-page-wrapper">
                         <!-- My Account Tab Menu Start -->
                         <div class="row">
-                            <div class="col-lg-3 col-md-4">
-                                <div class="myaccount-tab-menu nav" role="tablist">
-                                    <a href="{{ URL('account') }}" class="<?php echo (isset($segment[0]) AND $segment[0] == 'account')  ? 'active' : '' ?>"><i class="fa fa-dashboard"></i>
-                                        Dashboard</a>
-    
-                                    <a href="{{ URL('orders') }}" class="<?php echo (isset($segment[0]) AND $segment[0] == 'orders')  ? 'active' : '' ?>"><i class="fa fa-cart-arrow-down"></i> Orders History</a>
-    
-                                    <a href="{{ URL('account-detail') }}" class="<?php echo (isset($segment[0]) AND $segment[0] == 'account-detail')  ? 'active' : '' ?>"><i class="fa fa-user"></i> Account Details</a>
-    
-                                    <a href="{{ URL('signout') }}"><i class="fa fa-sign-out"></i> Logout</a>
-                                </div>
-                            </div>
+                                  @include('account/account_sidebar')
                             <!-- My Account Tab Menu End -->
     
                             <!-- My Account Tab Content Start -->
@@ -63,7 +54,7 @@
                                                         <div class="col-lg-12">
                                                             <div class="single-input-item">
                                                                 <label for="last-name" class="required">Name</label>
-                                                                <input type="text" id="last-name" name="uname" placeholder="Last Name" value="<?php echo Auth::user()->name; ?>">
+                                                                <input type="text" id="last-name" name="name" placeholder="Last Name" value="<?php echo Auth::user()->name; ?>">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -94,7 +85,7 @@
                                                     </fieldset>
     
                                                     <div class="single-input-item">
-                                                        <button class="check-btn sqr-btn" id="updateProfile">Save Changes</button>
+                                                        <button class="theme-btn btn-one" id="updateProfile">Save Changes</button>
                                                     </div>
                                                 </form>
                                             </div>

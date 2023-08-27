@@ -3,19 +3,19 @@
 
 
 <!-- banner_sec -->
-<section class="banner_sec">
+<section class="banner_sec" >
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div class="inner_text wow fadeInUp" data-wow-duration="2s">
-          <h1>Sign In</h1>
+          <h1 style="background-image: url(https://jidabyte.design-usa.co/public/app-front/images/background/choose-bg.png);">Sign In</h1>
         </div>  
       </div>
     </div>
   </div>
 </section>
 <!-- banner_sec -->
-<section class="InnerContent Login">
+<section class="InnerContent Login" >
          <div class="container">
             <div class="col-xs-12 col-sm-6">
               <h2>Login To Your Account</h2>
@@ -44,7 +44,7 @@
                   <a href="{{ url('password/reset') }}" class="pull-right forg_text"> Forgot password? </a>
                </div>
                <div class="form-group">
-                  <input type="submit" class="Submit_btn" value="Log In">
+                  <input type="submit" class="theme-btn btn-one" value="Log In">
                </div>
              </form>
             </div>
@@ -72,6 +72,7 @@
              @endif
                </div>
 
+
             <div class="form-group">
                   <label>Password </label>
                   <input type="password" class="form-control {{ $errors->registerForm->has('password') ? ' is-invalid' : '' }}" placeholder="Password" name="password" id="signup-password" required>
@@ -92,7 +93,7 @@
             </div>
                
                <div class="form-group">
-                  <input type="submit" class="Submit_btn" value="Log In">
+                  <input type="submit" class="theme-btn btn-one" value="Log In">
                </div>
                
              </form>
@@ -104,7 +105,14 @@
 
 @endsection
 @section('css')
-
+<style>
+    
+    .container {
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 4%;
+}
+</style>
 @endsection
 @section('js')
 

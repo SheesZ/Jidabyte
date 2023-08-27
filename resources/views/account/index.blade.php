@@ -10,6 +10,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="inner_text wow fadeInUp" data-wow-duration="2s">
+            <br>
           <h1>Account</h1>
         </div>  
       </div>
@@ -35,18 +36,7 @@
                     <div class="myaccount-page-wrapper">
                         <!-- My Account Tab Menu Start -->
                         <div class="row">
-                            <div class="col-lg-3 col-md-4">
-                                <div class="myaccount-tab-menu nav" role="tablist">
-                                    <a href="{{ URL('account') }}" class="<?php echo (isset($segment[0]) AND $segment[0] == 'account')  ? 'active' : '' ?>"><i class="fa fa-dashboard"></i>
-                                        Dashboard</a>
-    
-                                    <a href="{{ URL('orders') }}" class="<?php echo (isset($segment[0]) AND $segment[0] == 'orders')  ? 'active' : '' ?>"><i class="fa fa-cart-arrow-down"></i> Orders History</a>
-    
-                                    <a href="{{ URL('account-detail') }}" class="<?php echo (isset($segment[1]) AND $segment[1] == 'detail')  ? 'active' : '' ?>"><i class="fa fa-user"></i> Account Details</a>
-    
-                                    <a href="{{ URL('signout') }}"><i class="fa fa-sign-out"></i> Logout</a>
-                                </div>
-                            </div>
+                      @include('account/account_sidebar')
                             <!-- My Account Tab Menu End -->
     
                             <!-- My Account Tab Content Start -->

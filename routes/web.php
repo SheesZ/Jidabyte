@@ -167,6 +167,10 @@ Route::get('signup','GuestController@signup')->name('signup');
 Route::get('account','LoggedInController@account')->name('account');
 Route::get('orders','LoggedInController@orders')->name('orders');
 Route::get('account-detail','LoggedInController@accountDetail')->name('accountDetail');
+Route::get('add-product', 'LoggedInController@AddProduct')->name('addproduct');
+Route::get('list-products', 'LoggedInController@Listproduct')->name('listproduct');
+Route::get('Business-Partner', 'LoggedInController@BusinessPartner')->name('BusinessPartner');
+Route::get('view-products', 'LoggedInController@ViewProducts')->name('ViewProducts');
 
 Route::post('update/account','LoggedInController@updateAccount')->name('update.account');
 Route::get('signout', function() {
@@ -180,6 +184,8 @@ Route::get('signout', function() {
 
 Route::get('logout','Auth\LoginController@logout');
 Auth::routes();
+/////post route of product management/////
+Route::post('submitproduct','LoggedInController@submitproduct')->name('submitproduct');
 
 Route::get('account/friends','LoggedInController@friends')->name('friends');
 Route::get('account/upload','LoggedInController@upload')->name('upload');

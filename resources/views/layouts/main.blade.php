@@ -17,7 +17,7 @@
         <!-- Favicon icon -->
         <link rel="icon" type="image/png" sizes="24x24" 
                 href="{{asset('app-front/images/favicon.png')}}">
-
+           
         <title>JidaByte</title>
         <!-- ============================================================== -->
         <!-- All CSS LINKS IN BELOW FILE -->
@@ -39,6 +39,57 @@
         <!-- ============================================================== -->
         @include('layouts.front.scripts')
         @yield('js')
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+        <script src="{{asset('plugins/vendors/toast-master/js/jquery.toast.js')}}"></script>
+        <script>
+    CKEDITOR.replace( 'summary-ckeditor' );
+    CKEDITOR.replace( 'summary-ckeditor1' );
+	CKEDITOR.replace( 'summary-ckeditor2' );
+</script>
+
+
+<script>
+    $('#slimtest1, #slimtest2').perfectScrollbar();
+	
+	 $(document).ready(function () {
+
+            @if(\Session::has('message'))
+            $.toast({
+                heading: 'Success!',
+                position: 'top-center',
+                text: '{{session()->get('message')}}',
+                loaderBg: '#ff6849',
+                icon: 'success',
+                hideAfter: 3000,
+                stack: 6
+            });
+            @endif
+			
+			
+            @if(\Session::has('flash_message'))
+            $.toast({
+                heading: 'Info!',
+                position: 'top-center',
+                text: '{{session()->get('flash_message')}}',
+                loaderBg: '#ff6849',
+                icon: 'error',
+                hideAfter: 3000,
+                stack: 6
+            });
+            @endif
+			
+			
+        })
+	
+</script>
+
+<script type="text/javascript">
+            $(document).ready(function() { $("#e1").select2(); });
+</script>
+
+<script type="text/javascript">
+            $(document).ready(function() { $("#e2").select2(); });
+</script>
       
       </div>
     </body>

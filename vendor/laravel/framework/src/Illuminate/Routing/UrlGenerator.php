@@ -232,7 +232,6 @@ class UrlGenerator implements UrlGeneratorContract
      */
     public function asset($path, $secure = null)
     {
-        $path = "public/".$path;
         if ($this->isValidUrl($path)) {
             return $path;
         }

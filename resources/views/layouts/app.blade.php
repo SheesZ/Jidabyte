@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+	
 	<?php
 	$favicon = DB::table('imagetable')
 					->where('table_name', 'favicon')
 					->first();
-
-	?>
+					
+	?>	
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
     <meta name="description" content="Admin Mintone">
     <meta name="author" content="Admin Mintone">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{app-front/images/favicon.png)}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset(!empty($favicon->img_path)?$favicon->img_path:'')}}">
     <title>{{ config('app.name') }}</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('plugins/vendors/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
@@ -25,7 +25,7 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <!-- This page CSS -->
     @stack('before-css')
-
+   
     <!-- Custom CSS -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet">
@@ -49,7 +49,7 @@
     @stack('after-css')
 
 </head>
-
+			
 
 <body class="fix-header fix-sidebar card-no-border">
 <!-- ============================================================== -->
@@ -78,41 +78,21 @@
     <!-- ============================================================== -->
     <!-- Left Sidebar - style you can find in sidebar.scss  -->
     <!-- ============================================================== -->
-    <div class="container-fluid">
-
-		<div class="col-md-12">
-		<div class="row" >
-
-			<div style="padding-top:80px;">
-				@include('layouts.admin.sidebar')
-			</div>
-
-			<div class="col-md-12">
-
-				<div class="page-wrapper" >
-
-						@yield('content')
-						{{-- @include('layouts.admin.footer') --}}
-
-
-				</div>
-
-			</div>
-
-
-		</div>
-
-	</div>
-
-
+    <div class="container">
+        @include('layouts.admin.sidebar')
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-
-
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            @yield('content')
+            @include('layouts.admin.footer')
+        </div>
     </div>
     <!-- ============================================================== -->
     <!-- End Page Content -->
@@ -126,11 +106,7 @@
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
-
-
 </div>
-
-
 <!-- ============================================================== -->
 <!-- End Page wrapper  -->
 <!-- ============================================================== -->
@@ -173,7 +149,7 @@
 
 <script>
     $('#slimtest1, #slimtest2').perfectScrollbar();
-
+	
 	 $(document).ready(function () {
 
             @if(\Session::has('message'))
@@ -187,8 +163,8 @@
                 stack: 6
             });
             @endif
-
-
+			
+			
             @if(\Session::has('flash_message'))
             $.toast({
                 heading: 'Info!',
@@ -200,10 +176,10 @@
                 stack: 6
             });
             @endif
-
-
+			
+			
         })
-
+	
 </script>
 
 <script type="text/javascript">
